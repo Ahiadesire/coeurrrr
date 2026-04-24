@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    overflow: hidden;
+}
+
+/* PAGE */
+.page {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.active {
+    display: block;
+    animation: fade 0.8s ease;
+}
+
+/* ACCUEIL */
+.welcome-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.welcome-box h1 {
+    font-size: 50px;
+}
+
+.welcome-box p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.link {
+    margin-top: 30px;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* SLIDE */
+.slide {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 0 60px;
+}
+
+/* IMAGE */
+.slide img {
+    width: 45%;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+}
+
+/* TEXTE */
+.text {
+    width: 40%;
+}
+
+.text h2 {
+    font-size: 40px;
+}
+
+.text p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* BOUTON */
+.next-btn {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 30px;
+    background: red;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.next-btn:hover {
+    background: darkred;
+}
+
+/* FIN */
+.end-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle, #1a1a1a, black);
+    text-align: center;
+}
+
+.end-content {
+    animation: zoomFade 1.2s ease;
+}
+
+.end-content h1 {
+    font-size: 60px;
+}
+
+.end-content p {
+    font-size: 22px;
+    opacity: 0.8;
+}
+
+/* ANIMATIONS */
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomFade {
+    from { transform: scale(0.8); opacity: 0; filter: blur(5px); }
+    to { transform: scale(1); opacity: 1; filter: blur(0); }
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .slide {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .slide img {
+        width: 90%;
+    }
+
+    .text {
+        width: 100%;
+    }
+
+    .text h2 {
+        font-size: 28px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+
+    .next-btn {
+        position: fixed;
+        bottom: 20px;
+        width: 80%;
+    }
+
+    .welcome-box h1 {
+        font-size: 35px;
+    }
+
+    .welcome-box p {
+        font-size: 16px;
+    }
+
+    .end-content h1 {
+        font-size: 35px;
+    }
+
+    .end-content p {
+        font-size: 16px;
+    }
+}
